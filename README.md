@@ -8,25 +8,28 @@ Accepted to the ECCV 2024 VisArt Workshop.
 
 ## Key Features
 
-- Generate 3D replicas of scenes using only RGB images (e.g., photos from a museum)
+- Generate 3D replicas of scenes using only multi-view RGB images (e.g., photos from a museum)
 - Extract individual 3D models for items of interest within the scene
-- Utilizes modified Gaussian Splatting for efficient 3D segmentation
-- No manual annotation required
+- Deployable as a Docker container for easy setup and use
 - Input can be collected using a standard smartphone
+
 
 ## Installation
 
 Our pipeline is packaged as a Docker container for easy deployment. To use it:
 
-1. Install Docker on your system
-2. Pull the Docker image (link to be provided)
-3. Run the container with appropriate volume mounts for input/output
+### Prerequisites
+
+- **Docker:** Make sure Docker is installed on your system. You can download it from [Docker’s official website](https://www.docker.com/get-started).
+
+### Clone the Repository
 
 Detailed installation instructions will be provided soon.
 
+
 ## Usage
 
-1. Collect a set of RGB images of the scene you want to digitize
+1. Collect a set of multi-view RGB images of the scene you want to digitize
 2. Use our web interface to upload images to the local server
 3. The system will process the images to generate:
    - 2D instance segmentation masks
@@ -36,14 +39,6 @@ Detailed installation instructions will be provided soon.
 
 A step-by-step guide with examples will be added soon.
 
-## Method Overview
-
-Our pipeline consists of three key stages:
-1. Model Training and Optimization
-2. 2D Mask Rendering
-3. 3D Extraction
-
-For detailed information about each stage, please refer to our paper.
 
 ## Citation
 
