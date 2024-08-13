@@ -16,15 +16,95 @@ Accepted to the ECCV 2024 VisArt Workshop.
 
 ## Installation
 
-Our pipeline is packaged as a Docker container for easy deployment. To use it:
+### Requirements
 
-### Prerequisites
+- Host machine with at least one NVIDIA GPU/CUDA support and installed drivers
+- Docker
+- Ubuntu 22.04
 
-- **Docker:** Make sure Docker is installed on your system. You can download it from [Docker’s official website](https://www.docker.com/get-started).
+### Installation
 
-### Clone the Repository
+1. Check that Docker and Docker Compose are installed on your host machine:
 
-Detailed installation instructions will be provided soon.
+    ```bash
+    docker --version
+    docker-compose --version
+    ```
+
+2. Check that you have an NVIDIA driver installed on your host machine:
+
+    ```bash
+    nvidia-smi
+    ```
+
+3. Setup the NVIDIA Container Toolkit on your host machine:
+   Follow the instructions bellow or from [NVIDIA's official documentation](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
+
+   Configure Production Repository:
+   ```bash
+    curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+    && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+        sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+        sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+   ```
+
+   Optionally, configure the repository to use experimental packages:
+    ```bash
+    sed -i -e '/experimental/ s/^#//g' /etc/apt/sources.list.d/nvidia-container-toolkit.list
+    ```
+
+    Update the packages list from the repository:
+    ```bash
+    sudo apt-get update
+    ```
+
+    Install the NVIDIA Container Toolkit packages:
+    ```bash
+    sudo apt-get install -y nvidia-container-toolkit
+    ```
+
+    Configure the container runtime by using the nvidia-ctk command:
+    ```bash
+    sudo nvidia-ctk runtime configure --runtime=docker
+    ```
+
+    Restart the Docker daemon:
+    ```bash
+    sudo systemctl restart docker
+    ```
+
+4. Check that you have CUDA installed on your host machine:
+    ```bash
+    nvcc --version
+    ```
+    If CUDA is not installed on your host machine, Install CUDA by executing the following command:
+    ```bash
+    sudo apt install nvidia-cuda-toolkit
+    ```
+
+### Building and Running
+
+1. Clone this repository to your local machine:
+
+    ```bash
+    git clone https://github.com/mahtaabdn/Gaussian-Heritage.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd Gaussian-Heritage
+    ```
+
+3. Build and start the Docker containers:
+
+    ```bash
+    docker-compose up
+    ```
+
+### Accessing the Application
+
+If everything works fine, you should be able to open a browser and connect to [http://127.0.0.1:5000](http://127.0.0.1:5000).
 
 
 ## Usage

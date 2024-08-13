@@ -1,0 +1,36 @@
+# Use the official PyTorch image from Docker Hub as the base image
+FROM pytorch/pytorch:1.10.0-cuda11.3-cudnn8-runtime
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Set DEBIAN_FRONTEND to noninteractive to avoid interactive prompts during package installation
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Install system dependencies required for building certain Python packages
+RUN apt-get update && apt-get install -y \
+    build-essential \    
+    cmake \              
+    libopencv-dev \      
+    && rm -rf /var/lib/apt/lists/*   
+
+# Install Python dependencies 
+RUN pip install --no-cache-dir \
+    numpy \               
+    opencv-python-headless \  
+    jsonschema \          
+    argparse \            
+    matplotlib  \
+    segment-anything          
+
+# Expose port 8090 to allow external communication
+EXPOSE 8090
+
+# Set environment variable SAM_ENV to 'production'
+ENV SAM_ENV=production
+
+# Run the application when the container starts
+#CMD ["python", "run_sam.py"]

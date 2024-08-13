@@ -1,0 +1,13 @@
+{
+    "densify_until_iter": 15000,
+    "contrastive_interval": 50,
+    "contrastive_lambda": 1e-6,
+    "min_pixnum": 100,
+    "spatial_similarity_interval": 100,
+    "k_pull": 2,
+    "k_push": 5,
+    "lambda_pull": 0.05,
+    "lambda_pull": 0.15,
+    "reg3d_max_points": 300000,
+    "reg3d_sample_size": 1000
+}

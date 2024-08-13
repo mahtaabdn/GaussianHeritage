@@ -1,0 +1,11 @@
+# Use an existing image as a base
+FROM colmap/colmap:3.6-dev.3
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Expose any ports the app is expecting
+EXPOSE 8080
+
+# Specify the command to run with GPU support using --gpus
+CMD ["--gpus", "all", "colamap", "start"]

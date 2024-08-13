@@ -1,0 +1,72 @@
+version: '3.8'  # Use version 3.8 for Docker Swarm features
+
+services:
+  flask:
+    build: 
+      context: ./flask
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock  # Mount Docker socket
+    environment:
+      FLASK_ENV: development
+
+  colmap:
+    build: 
+      context: ./colmap
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - data:/data
+    ports:
+      - "8080:8080"
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities:
+                - gpu
+
+  sam:
+    build: 
+      context: ./sam
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - data:/data
+    ports:
+      - "8090:8090"
+    stdin_open: true
+    tty: true
+    environment:
+      SAM_ENV: production
+
+  cgc:
+    build: 
+      context: ./cgc
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - data:/data
+    ports:
+      - "8100:8100"
+    stdin_open: true
+    tty: true
+    environment:
+      CONDA_DEFAULT_ENV: gaussian_grouping
+      PATH: /opt/conda/envs/gaussian_grouping/bin:$PATH
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities:
+                - gpu
+
+volumes:
+  data:
