@@ -12,7 +12,6 @@ This repository contains the implementation of "Gaussian Heritage", a pipeline f
 - Generate 3D replicas of scenes using only multi-view RGB images (e.g., photos from a museum)
 - Extract individual 3D models for items of interest within the scene
 - Deployable as a Docker container for easy setup and use
-- Input can be collected using a standard smartphone
 
 
 ## Installation
