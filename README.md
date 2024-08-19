@@ -1,7 +1,7 @@
 # Gaussian Heritage: 3D Digitization of Cultural Heritage with Integrated Object Segmentation
 ECCV 2024 VISART Workshop
-[Project Page](https://mahtaabdn.github.io/Gaussian-Heritage/#) | [Paper](https://mahtaabdn.github.io/Gaussian-Heritage/#) 
-![Preview Image](https://github.com/mahtaabdn/Gaussian-Heritage/blob/gh-pages/fig1.png)
+[Project Page](https://mahtaabdn.github.io/gaussian_heritage.github.io/) | [Paper](https://mahtaabdn.github.io/Gaussian-Heritage/#) 
+![Preview Image](https://github.com/mahtaabdn/Gaussian-Heritage/fig1.png)
 ## Overview
 
 This repository contains the implementation of "Gaussian Heritage", a pipeline for 3D digitization of cultural heritage objects using only RGB images. Our method leverages advancements in novel view synthesis and Gaussian Splatting to create 3D replicas of scenes and extract models for individual items of interest.
