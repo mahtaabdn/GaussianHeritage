@@ -123,9 +123,10 @@ A step-by-step guide with examples will be added soon.
 ## Citation
 
 If you use this work in your research, please cite our paper:
+```bibtex
 @inproceedings{dahaghin2024gaussianheritage,
-        author    = {Mahtab Dahaghin and Myrna Castillo and Kourosh Riahidehkordi and Matteo Toso and Alessio Del Bue},
-        title     = {Gaussian Heritage: 3D Digitization of Cultural Heritage},
-        journal = {Proceedings of the European Conference on Computer Vision (ECCV) VISART Workshop},
-        year      = {2024},
-      }
+  author    = {Mahtab Dahaghin and Myrna Castillo and Kourosh Riahidehkordi and Matteo Toso and Alessio Del Bue},
+  title     = {Gaussian Heritage: 3D Digitization of Cultural Heritage},
+  booktitle = {Proceedings of the European Conference on Computer Vision (ECCV) VISART Workshop},
+  year      = {2024},
+}
