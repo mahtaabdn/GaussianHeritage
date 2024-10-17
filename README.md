@@ -124,9 +124,9 @@ A step-by-step guide with examples will be added soon.
 
 If you use this work in your research, please cite our paper:
 ```bibtex
-@inproceedings{dahaghin2024gaussianheritage,
-  author    = {Mahtab Dahaghin and Myrna Castillo and Kourosh Riahidehkordi and Matteo Toso and Alessio Del Bue},
-  title     = {Gaussian Heritage: 3D Digitization of Cultural Heritage},
-  booktitle = {Proceedings of the European Conference on Computer Vision (ECCV) VISART Workshop},
-  year      = {2024},
+@article{dahaghin2024gaussian,
+  title={Gaussian Heritage: 3D Digitization of Cultural Heritage with Integrated Object Segmentation},
+  author={Dahaghin, Mahtab and Castillo, Myrna and Riahidehkordi, Kourosh and Toso, Matteo and Del Bue, Alessio},
+  journal={arXiv preprint arXiv:2409.19039},
+  year={2024}
 }
