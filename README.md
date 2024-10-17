@@ -1,6 +1,6 @@
 # Gaussian Heritage: 3D Digitization of Cultural Heritage with Integrated Object Segmentation
 ECCV 2024 VISART Workshop
-[Project Page](https://mahtaabdn.github.io/gaussian_heritage.github.io/) | [Paper](https://mahtaabdn.github.io/Gaussian-Heritage/#) 
+[Project Page](https://mahtaabdn.github.io/gaussian_heritage.github.io/) | [Paper](https://arxiv.org/pdf/2409.19039) 
 ![Preview Image](https://github.com/mahtaabdn/GaussianHeritage/blob/main/fig1.png)
 ## Overview
 
